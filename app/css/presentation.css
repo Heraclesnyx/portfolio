@@ -1,0 +1,14 @@
+.presentation {
+	border: 1px solid red;
+	height: 390px;
+}
+
+h2 {
+	text-align: center;
+}
+
+img {
+	float: left;
+	height: 20em;
+	width: 20em;
+}
