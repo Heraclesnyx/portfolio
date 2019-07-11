@@ -1,3 +1,3 @@
-app.controller('mainController', ['$scope', '$http', function($scope, $http){
-	$scope.texte = "Hello World";	
-}]);
+// app.controller('mainController', ['$scope', '$http', function($scope, $http){
+// 	$scope.texte = "Hello World";	
+// }]);
