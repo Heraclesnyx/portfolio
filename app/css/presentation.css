@@ -1,14 +1,26 @@
 .presentation {
 	border: 1px solid red;
-	height: 390px;
+	height: 270px;
+	overflow: hidden;
 }
 
-h2 {
+h1 {
 	text-align: center;
 }
 
-img {
+h2 {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.presentation img {
+	margin: 0 auto;
 	float: left;
-	height: 20em;
-	width: 20em;
+	max-height: 100%;
+	width: auto;
+}
+
+.presentation p {
+	margin: 50px 0 0 220px;
 }
