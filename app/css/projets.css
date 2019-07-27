@@ -2,12 +2,13 @@
 	border: 1px solid blue;
 	display: flex;
 	justify-content: space-around;
+	padding-top: 50px;
 }
 .projet{
 	margin: 5px;
   	border: 1px solid #ccc;
   	float: left;
-  	width: 180px;
+  	width: 260px;
 }
 
 .projet img {
