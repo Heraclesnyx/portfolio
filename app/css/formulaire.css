@@ -1,0 +1,12 @@
+#formulaire {
+	border: 1px solid green;
+
+}
+
+form {
+	border-radius: 10px;
+	border: 1px solid grey;
+	margin: auto;
+    width: 50%;
+	/*background-color: #000000;*/
+}
