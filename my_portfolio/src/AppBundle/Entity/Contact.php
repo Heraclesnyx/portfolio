@@ -47,7 +47,10 @@ class Contact
     /**
      * @var string
      *@Assert\NotBlank
-     *@Assert\Length(min=3) 
+     *@Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * ) 
      */
     private $content;
 
