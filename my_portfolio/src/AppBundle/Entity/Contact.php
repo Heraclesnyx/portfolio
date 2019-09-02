@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Contact
  *
- * @ORM\Table(name="contact")
+ * 
  */
 class Contact
 {
@@ -26,28 +26,28 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="first_name", type="string", length=255)
+     * 
      */
     private $firstName;
 
     /**
      * @var string
      *@Assert\NotBlank
-     * @ORM\Column(name="last_name", type="string", length=255)
+     *@Assert\Length(min=3)
      */
     private $lastName;
 
     /**
      * @var string
      *@Assert\NotBlank
-     * @ORM\Column(name="mail", type="string", length=255)
+     *@Assert\Length(min=3) 
      */
     private $mail;
 
     /**
      * @var string
      *@Assert\NotBlank
-     * @ORM\Column(name="content", type="string", length=255)
+     *@Assert\Length(min=3) 
      */
     private $content;
 

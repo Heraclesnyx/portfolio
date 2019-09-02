@@ -20,12 +20,49 @@ class DefaultController extends Controller
     }
 
 
+    /**
+    * @Route(
+    * "/send-contact", 
+    * name="send-contact",
+    * methods = {"POST"}
+*)
+     */
+    public function contactAction(Request $request)
+    {
+        # body...
+        $contact = new Contact();
+
+        $form = $this->createFormBuilder($contact)
+            ->add('lastName', TextType::class)
+            ->add('firstName', TextType::class)
+            ->add('mail', EmailType::class)
+            ->add('content', TextType::class, ['label' => 'Votre commentaire'])
+            ->add('submit', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isValid() && $form->isSubmitted()){
+            $contact = $form->getData();
+
+            return $this->redirectToRoute('message_succes');
+        }
+
+        return $this->render('base.html.twig', [
+            'form' => $form->createView(),
+        ]);
+
+
+
+
+    }
+
     // public function ContactAction(){
         
     //     $contact = new Contact();
 
     //     if($form -> isValid()){
-            
+
     //     }
 
     // }
