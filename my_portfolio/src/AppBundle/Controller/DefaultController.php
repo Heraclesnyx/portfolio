@@ -20,5 +20,13 @@ class DefaultController extends Controller
     }
 
 
-    // public function 
+    // public function ContactAction(){
+        
+    //     $contact = new Contact();
+
+    //     if($form -> isValid()){
+            
+    //     }
+
+    // }
 }

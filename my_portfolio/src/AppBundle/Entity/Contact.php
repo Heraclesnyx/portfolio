@@ -11,7 +11,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Contact
  *
  * @ORM\Table(name="contact")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
  */
 class Contact
 {
@@ -33,21 +32,21 @@ class Contact
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank
      * @ORM\Column(name="last_name", type="string", length=255)
      */
     private $lastName;
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank
      * @ORM\Column(name="mail", type="string", length=255)
      */
     private $mail;
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank
      * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
