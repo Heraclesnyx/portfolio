@@ -2,19 +2,19 @@
 	<form> <!--Ne pas oublier de créer la fonction submit() dans le controller -->
 		<div class="row">
 			<div class="col">
-				<input type="text" class="form-control" placeholder="First name" required>
+				<input type="text" class="form-control" name="firstName" placeholder="First name" required>
 			</div>
 			<div class="col">
-				<input type="text" class="form-control" required placeholder="Last name">
+				<input type="text" class="form-control" name="lastName" required placeholder="Last name">
 			</div>
 		</div>
 		<div class="form-group">
 			<!-- <label for="email">Email address</label> -->
-			<input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+			<input type="email" class="form-control" id="email" name="mail" placeholder="name@example.com" required>
 		</div>
 		<div class="form-group">
 			<label for="textarea">Votre commentaire</label>
-			<textarea class="form-control" id="textarea" rows="3"></textarea>
+			<textarea class="form-control" id="textarea" name="content" rows="3"></textarea>
 		</div>
 		 <button type="submit" class="btn btn-primary">Envoyez votre message</button>
 
