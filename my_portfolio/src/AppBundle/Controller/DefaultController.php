@@ -58,7 +58,7 @@ class DefaultController extends Controller
     public function mailAction($name, \Swift_Mailer $mailer){
 
         $message = (new \Swift_Message('Hello Email'))
-        ->setFrom('send@example.com')
+        ->setFrom('name@example.com')
         ->setTo('recipient@example.com')
         ->setBody(
             $this->renderView(
