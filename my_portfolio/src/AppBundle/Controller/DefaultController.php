@@ -76,14 +76,13 @@ class DefaultController extends Controller
                 ['name' => $name]
             ),
             'text/plain'
-        )
-        ;
+        );
 
         $mailer->send($message);
 
     // or, you can also fetch the mailer service this way
-    // $this->get('mailer')->send($message);
+        $this->get('mailer')->send($message);
 
-        return $this->render('base.html.twig');
+        // return $this->render('base.html.twig');
     }
 }
