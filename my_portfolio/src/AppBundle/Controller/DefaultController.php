@@ -55,35 +55,35 @@ class DefaultController extends Controller
     }
 
 
-//     public function mailAction($name, \Swift_Mailer $mailer){
+    public function mailAction($name, \Swift_Mailer $mailer){
 
-//         $message = (new \Swift_Message('Hello Email'))
-//         ->setFrom('send@example.com')
-//         ->setTo('recipient@example.com')
-//         ->setBody(
-//             $this->renderView(
-//                 // app/Resources/views/Emails/registration.html.twig
-//                 'Emails/registration.html.twig',
-//                 ['name' => $name]
-//             ),
-//             'text/html'
-//         )
+        $message = (new \Swift_Message('Hello Email'))
+        ->setFrom('send@example.com')
+        ->setTo('recipient@example.com')
+        ->setBody(
+            $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                'Emails/registration.html.twig',
+                ['name' => $name]
+            ),
+            'text/html'
+        )
 
-//         // you can remove the following code if you don't define a text version for your emails
-//         ->addPart(
-//             $this->renderView(
-//                 'Emails/registration.txt.twig',
-//                 ['name' => $name]
-//             ),
-//             'text/plain'
-//         )
-//         ;
+        // you can remove the following code if you don't define a text version for your emails
+        ->addPart(
+            $this->renderView(
+                'Emails/registration.txt.twig',
+                ['name' => $name]
+            ),
+            'text/plain'
+        )
+        ;
 
-//         $mailer->send($message);
+        $mailer->send($message);
 
-//     // or, you can also fetch the mailer service this way
-//     // $this->get('mailer')->send($message);
+    // or, you can also fetch the mailer service this way
+    // $this->get('mailer')->send($message);
 
-//         return $this->render('base.html.twig');
-//     }
+        return $this->render('base.html.twig');
+    }
 }
