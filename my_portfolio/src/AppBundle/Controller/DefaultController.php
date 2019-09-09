@@ -2,9 +2,15 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Contact;
+use AppBundle\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+
+// use Symfony\Component\Form\Extension\Core\Type\TextType;
+// use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+// use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class DefaultController extends Controller
 {
@@ -20,33 +26,33 @@ class DefaultController extends Controller
     }
 
 
-    
-    public function contactAction(Request $request)
-    {
-        # body...
-        $contact = new Contact();
+   
+    // public function contactAction(Request $request)
+    // {
+    //     # body...
+    //     $contact = new Contact();
 
-        $form = $this->createFormBuilder($contact)
-            ->add('lastName', TextType::class)
-            ->add('firstName', TextType::class)
-            ->add('mail', EmailType::class)
-            ->add('content', TextType::class, ['label' => 'Votre commentaire'])
-            ->add('submit', SubmitType::class)
-            ->getForm();
+    //     $form = $this->createFormBuilder($contact)
+    //         ->add('lastName', TextType::class)
+    //         ->add('firstName', TextType::class)
+    //         ->add('mail', EmailType::class)
+    //         ->add('content', TextType::class, ['label' => 'Votre commentaire'])
+    //         ->add('submit', SubmitType::class)
+    //         ->getForm();
 
-        $form->handleRequest($request);
+    //     $form->handleRequest($request);
 
-        if($form->isValid() && $form->isSubmitted()){
-            $contact = $form->getData();
+    //     if($form->isValid() && $form->isSubmitted()){
+    //         $contact = $form->getData();
 
-            return $this->redirectToRoute('message_succes');
-        }
+    //         return $this->redirectToRoute('message_succes');
+    //     }
 
-        // return $this->render('base.html.twig', [
-        //     'form' => $form->createView(),
-        // ]);
+    //     // return $this->render('base.html.twig', [
+    //     //     'form' => $form->createView(),
+    //     // ]);
 
-    }
+    // }
 
     public function mailAction($name, \Swift_Mailer $mailer){
 
@@ -59,8 +65,8 @@ class DefaultController extends Controller
                 // app/Resources/views/Emails/registration.html.twig
                     'Emails/registration.html.twig',
                     ['name' => $name]
-                ),
-                'text/html'
+                )
+               
             )
 
         // you can remove the following code if you don't define a text version for your emails
