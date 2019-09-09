@@ -20,13 +20,7 @@ class DefaultController extends Controller
     }
 
 
-    /**
-    * @Route(
-    * "/send-contact", 
-    * name="send-contact",
-    * methods = {"POST"}
-*)
-     */
+    
     public function contactAction(Request $request)
     {
         # body...
@@ -54,35 +48,39 @@ class DefaultController extends Controller
 
     }
 
-
     public function mailAction($name, \Swift_Mailer $mailer){
 
-        $message = (new \Swift_Message('Hello Email'))
-        ->setFrom('name@example.com')
-        ->setTo('recipient@example.com')
-        ->setBody(
-            $this->renderView(
+        try{    
+            $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('name@example.com')
+            ->setTo('recipient@example.com')
+            ->setBody(
+                $this->renderView(
                 // app/Resources/views/Emails/registration.html.twig
-                'Emails/registration.html.twig',
-                ['name' => $name]
-            ),
-            'text/html'
-        )
+                    'Emails/registration.html.twig',
+                    ['name' => $name]
+                ),
+                'text/html'
+            )
 
         // you can remove the following code if you don't define a text version for your emails
-        ->addPart(
-            $this->renderView(
-                'Emails/registration.txt.twig',
-                ['name' => $name]
-            ),
-            'text/plain'
-        );
+            ->addPart(
+                $this->renderView(
+                    'Emails/registration.txt.twig',
+                    ['name' => $name]
+                ),
+                'text/plain'
+            );
 
-        $mailer->send($message);
+            $mailer->send($message);
 
     // or, you can also fetch the mailer service this way
-        $this->get('mailer')->send($message);
+            $this->get('mailer')->send($message);
 
         // return $this->render('base.html.twig');
+        }catch(Exception $e){
+            dump('lol');
+            die();
+        }
     }
 }
