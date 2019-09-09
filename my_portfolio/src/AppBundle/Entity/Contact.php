@@ -25,24 +25,17 @@ class Contact
 
     /**
      * @var string
-     *
-     * 
+     *@Assert\NotBlank
+     *@Assert\Length(min=3)
      */
     private $firstName;
 
     /**
      * @var string
      *@Assert\NotBlank
-     *@Assert\Length(min=3)
-     */
-    private $lastName;
-
-    /**
-     * @var string
-     *@Assert\NotBlank
      *@Assert\Length(min=3) 
      */
-    private $mail;
+    private $lastName;
 
     /**
      * @var string
@@ -51,6 +44,14 @@ class Contact
      *     message = "The email '{{ value }}' is not a valid email.",
      *     checkMX = true
      * ) 
+     */
+    private $mail;
+
+    /**
+     * @var string
+     *@Assert\NotBlank
+     *
+     * 
      */
     private $content;
 

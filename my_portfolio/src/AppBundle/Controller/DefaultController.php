@@ -54,6 +54,14 @@ class DefaultController extends Controller
 
     // }
 
+
+    /**
+    * @Route(
+    * "/send-contact", 
+    * name="send-contact",
+    * methods = {"POST"}
+*)
+     */
     public function mailAction($name, \Swift_Mailer $mailer){
 
         try{    
@@ -65,8 +73,8 @@ class DefaultController extends Controller
                 // app/Resources/views/Emails/registration.html.twig
                     'Emails/registration.html.twig',
                     ['name' => $name]
-                )
-               
+                ),
+                'text/html'
             )
 
         // you can remove the following code if you don't define a text version for your emails
