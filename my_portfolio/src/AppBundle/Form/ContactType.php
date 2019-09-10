@@ -9,18 +9,18 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+// use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lastName', TextType::class,)
-            ->add('firstName', TextType::class,)
-            ->add('mail', EmailType::class)
-            ->add('content', TextType::class, ['label' => 'Votre commentaire']);
-        }
+            ->add('lastName', Type\TextType::class)
+            ->add('firstName', Type\TextType::class)
+            ->add('mail', Type\EmailType::class)
+            ->add('content', Type\TextType::class);
+    }
 
     public function configureOptions(OptionsResolver $resolver)
     {
