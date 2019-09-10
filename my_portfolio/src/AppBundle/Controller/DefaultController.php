@@ -8,9 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-// use Symfony\Component\Form\Extension\Core\Type\TextType;
-// use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-// use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class DefaultController extends Controller
 {
@@ -25,44 +22,55 @@ class DefaultController extends Controller
         ]);
     }
 
+    public function contactAction(Request $request)
+    {
+        $contact = new Contact();
+        $form = $this->createForm(SendContactType::class, $contact);
+        $form->handleRequest($request);
 
-   
-    // public function contactAction(Request $request)
-    // {
-    //     # body...
-    //     $contact = new Contact();
+        if ($form->isSubmitted() && $form->isValid()) {
+            # try-catch pour l'envoi du mail.
+             try{    
+            $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('name@example.com')
+            ->setTo('recipient@example.com')
+            ->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    'Emails/registration.html.twig',
+                    ['name' => $name]
+                ),
+                'text/html'
+            );
 
-    //     $form = $this->createFormBuilder($contact)
-    //         ->add('lastName', TextType::class)
-    //         ->add('firstName', TextType::class)
-    //         ->add('mail', EmailType::class)
-    //         ->add('content', TextType::class, ['label' => 'Votre commentaire'])
-    //         ->add('submit', SubmitType::class)
-    //         ->getForm();
+        // you can remove the following code if you don't define a text version for your emails
+            // ->addPart(
+            //     $this->renderView(
+            //         'Emails/registration.txt.twig',
+            //         ['name' => $name]
+            //     ),
+            //     'text/plain'
+            // );
 
-    //     $form->handleRequest($request);
+            // $mailer->send($message);
 
-    //     if($form->isValid() && $form->isSubmitted()){
-    //         $contact = $form->getData();
+    // or, you can also fetch the mailer service this way
+            $this->get('mailer')->send($message);
 
-    //         return $this->redirectToRoute('message_succes');
-    //     }
+        return $this->render('base.html.twig');
+        }catch(Exception $e){
+            dump('lol');
+            die();
+        }
+        }
 
-    //     // return $this->render('base.html.twig', [
-    //     //     'form' => $form->createView(),
-    //     // ]);
+        return $this->render('default/contact.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
 
-    // }
-
-
-    /**
-    * @Route(
-    * "/send-contact", 
-    * name="send-contact",
-    * methods = {"POST"}
-*)
-     */
-    public function mailAction($name, \Swift_Mailer $mailer){
+    
+/*    public function mailAction($name, \Swift_Mailer $mailer){
 
         try{    
             $message = (new \Swift_Message('Hello Email'))
@@ -75,26 +83,26 @@ class DefaultController extends Controller
                     ['name' => $name]
                 ),
                 'text/html'
-            )
-
-        // you can remove the following code if you don't define a text version for your emails
-            ->addPart(
-                $this->renderView(
-                    'Emails/registration.txt.twig',
-                    ['name' => $name]
-                ),
-                'text/plain'
             );
 
-            $mailer->send($message);
+        // you can remove the following code if you don't define a text version for your emails
+            // ->addPart(
+            //     $this->renderView(
+            //         'Emails/registration.txt.twig',
+            //         ['name' => $name]
+            //     ),
+            //     'text/plain'
+            // );
+
+            // $mailer->send($message);
 
     // or, you can also fetch the mailer service this way
-            $this->get('mailer')->send($message);
+            // $this->get('mailer')->send($message);
 
-        // return $this->render('base.html.twig');
+        return $this->render('base.html.twig');
         }catch(Exception $e){
             dump('lol');
             die();
         }
-    }
+    }*/
 }

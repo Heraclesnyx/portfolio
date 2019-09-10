@@ -40,18 +40,16 @@ class Contact
     /**
      * @var string
      *@Assert\NotBlank
-     *@Assert\Email(
-     *     message = "The email '{{ value }}' is not a valid email.",
-     *     checkMX = true
-     * ) 
+     *@Assert\Email()
+     *  
      */
     private $mail;
 
     /**
      * @var string
      *@Assert\NotBlank
-     *
-     * 
+     *@Assert\Length(min=20)
+     *  
      */
     private $content;
 
