@@ -22,6 +22,11 @@ class DefaultController extends Controller
         ]);
     }
 
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+
     public function contactAction(Request $request)
     {
         $contact = new Contact();
@@ -30,18 +35,18 @@ class DefaultController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             # try-catch pour l'envoi du mail.
-            //  try{    
-            // $message = (new \Swift_Message('Hello Email'))
-            // ->setFrom('name@example.com')
-            // ->setTo('recipient@example.com')
-            // ->setBody(
-            //     $this->renderView(
-            //     // app/Resources/views/Emails/registration.html.twig
-            //         'Emails/registration.html.twig',
-            //         ['name' => $name]
-            //     ),
-            //     'text/html'
-            // );
+             try{    
+            $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('name@example.com')
+            ->setTo('recipient@example.com')
+            ->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    'Emails/registration.html.twig',
+                    ['name' => $name]
+                ),
+                'text/html'
+            );
 
         // you can remove the following code if you don't define a text version for your emails
             // ->addPart(
@@ -57,11 +62,11 @@ class DefaultController extends Controller
     // or, you can also fetch the mailer service this way
         //     $this->get('mailer')->send($message);
 
-        // return $this->render('base.html.twig');
-        // }catch(Exception $e){
-        //     dump('lol');
-        //     die();
-        // }
+            return $this->render('base.html.twig');
+            }catch(Exception $e){
+                 dump('lol');
+                 die();
+            }
         }
 
         return $this->render('default/contact.html.twig', [
