@@ -73,41 +73,4 @@ class DefaultController extends Controller
             'form' => $form->createView()
         ]);
     }
-
-    
-/*    public function mailAction($name, \Swift_Mailer $mailer){
-
-        try{    
-            $message = (new \Swift_Message('Hello Email'))
-            ->setFrom('name@example.com')
-            ->setTo('recipient@example.com')
-            ->setBody(
-                $this->renderView(
-                // app/Resources/views/Emails/registration.html.twig
-                    'Emails/registration.html.twig',
-                    ['name' => $name]
-                ),
-                'text/html'
-            );
-
-        // you can remove the following code if you don't define a text version for your emails
-            // ->addPart(
-            //     $this->renderView(
-            //         'Emails/registration.txt.twig',
-            //         ['name' => $name]
-            //     ),
-            //     'text/plain'
-            // );
-
-            // $mailer->send($message);
-
-    // or, you can also fetch the mailer service this way
-            // $this->get('mailer')->send($message);
-
-        return $this->render('base.html.twig');
-        }catch(Exception $e){
-            dump('lol');
-            die();
-        }
-    }*/
 }
