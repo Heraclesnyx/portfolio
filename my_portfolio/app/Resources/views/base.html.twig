@@ -1,33 +1,25 @@
-{% extends 'index.html.twig' %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio</title>
 
-{% block body %}
-{% endblock %}
+  <link rel="stylesheet" type="text/css" href="app/css/presentation.css">
+  <link rel="stylesheet" type="text/css" href="app/css/projets.css">
+  <link rel="stylesheet" type="text/css" href="app/css/formulaire.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
+</head>
 
+<body ng-app="app" ng-controller="mainController">
 
-<!-- <body ng-app="app" ng-controller="mainController">
- -->
-
-<!-- <div class="header">
-  <div class="container">
-    <h1>Mon portfolio</h1>
-  </div>
-</div>
-
-<div id="main">
-  
-  <a href="/contact"><button type="button">Contactez moi</button></a>
-
-  <div ng-view>
-    <! <div ng-include="'app/js/templates/projets.html'"></div> -->
-  <!-- </div> -->
-
-  <!-- <div ng-include="'app/js/templates/projets.html'"></div> -->
-
-
-<!-- </div> -->
+{% block body %}{% endblock %}
 
 <!-- Modules -->
-<!-- <script type="text/javascript" src="app/js/app.js"></script> -->
-<!-- </body>
-</html> -->
+{% block angularjs %}
+<script type="text/javascript" src="app/js/app.js"></script>
+{% endblock %}
+</body>
+</html>
