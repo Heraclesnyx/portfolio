@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class DefaultController extends Controller
+class DefaultController extends BaseController
 {
     /**
      * @Route("/", name="homepage")
@@ -29,38 +29,30 @@ class DefaultController extends Controller
 
     public function contactAction(Request $request)
     {
+        $mailer = $this->sc->getMailer();
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             # try-catch pour l'envoi du mail.
-             try{    
+            // var_dump($form->getData());
+            try{
+
+            // var_dump("toto1");    
             $message = (new \Swift_Message('Hello Email'))
             ->setFrom('name@example.com')
             ->setTo('recipient@example.com')
             ->setBody(
                 $this->renderView(
                 // app/Resources/views/Emails/registration.html.twig
-                    'Emails/registration.html.twig',
-                    ['name' => $name]
+                    'Emails/registration.html.twig'
+                    // ['name' => $name]
                 ),
                 'text/html'
             );
-
-        // you can remove the following code if you don't define a text version for your emails
-            // ->addPart(
-            //     $this->renderView(
-            //         'Emails/registration.txt.twig',
-            //         ['name' => $name]
-            //     ),
-            //     'text/plain'
-            // );
-
-            // $mailer->send($message);
-
-    // or, you can also fetch the mailer service this way
-        //     $this->get('mailer')->send($message);
+            // dump($firstName);
+            // var_dump("toto2");
 
             return $this->render('base.html.twig');
             }catch(Exception $e){

@@ -14,6 +14,7 @@ services:
         # if you need to do this, you can override this setting on individual services
         public: false
 
+
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     AppBundle\:
@@ -33,3 +34,13 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    # Conteneurs de base avec des getter typés des services et repositories
+    AppBundle\Container\:
+        resource: '../../src/AppBundle/Container'
+        public: true
+
+     # Mailer
+    AppBundle\Service\MailerService:
+        arguments: ['@swiftmailer.mailer.spool', '@swiftmailer.mailer.immediat', '%mail_sender_address%']
+        public: true
