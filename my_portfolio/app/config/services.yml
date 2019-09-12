@@ -41,7 +41,7 @@ services:
         resource: '../../src/AppBundle/Container'
         public: true
 
-    # Mailer
+     # Mailer
     AppBundle\Service\MailerService:
         arguments: ['@swiftmailer.spool', '@swiftmailer.mailer.immediat', '%mail_sender_address%']
         public: true

@@ -35,7 +35,7 @@ class MailerService
 
     /** set from */
     public function setFrom($from)
-    {
+    {   
         $this->message->setFrom($from);
     }
 
