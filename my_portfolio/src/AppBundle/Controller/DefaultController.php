@@ -39,24 +39,11 @@ class DefaultController extends BaseController
             // var_dump($form->getData());
             try{
 
-            // var_dump("toto1");    
-            $message = (new \Swift_Message('Hello Email'))
-            ->setFrom('name@example.com')
-            ->setTo('recipient@example.com')
-            ->setBody(
-                $this->renderView(
-                // app/Resources/views/Emails/registration.html.twig
-                    'Emails/registration.html.twig'
-                    // ['name' => $name]
-                ),
-                'text/html'
-            );
-            // dump($firstName);
-            // var_dump("toto2");
+            $mailer = $this->sc->getMailer();
 
             return $this->render('base.html.twig');
             }catch(Exception $e){
-                 dump('lol');
+                 dump($mailer);
                  die();
             }
         }
