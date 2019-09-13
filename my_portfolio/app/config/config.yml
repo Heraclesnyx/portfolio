@@ -60,11 +60,14 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    default_mailer: immediat
+    mailers:
+        immediat:
+            transport: '%mailer_transport%'
+            host: '%mailer_host%'
+            username: '%mailer_user%'
+            password: '%mailer_password%'
+            # spool: { type: memory }
 
 sensio_framework_extra:
    router:

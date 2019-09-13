@@ -15,17 +15,16 @@ namespace AppBundle\Service;
  */
 class MailerService 
 {
-    /** @var \Swift_Mailer $spoolMailer */
-    private $spoolMailer;
+    
     /** @var \Swift_Mailer $immediatMailer */
     private $immediatMailer;
     /** @var \Swift_Message $message */
     private $message;
 
     /** Constructor */
-    public function __construct(\Swift_Mailer $spool, \Swift_Mailer $immediat, string $from)
+    public function __construct(\Swift_Mailer $immediat, string $from)
     {
-        $this->spoolMailer = $spool;
+        
         $this->immediatMailer = $immediat;
         $this->message = \Swift_Message::newInstance()
             ->setContentType("text/plain")
@@ -139,11 +138,6 @@ class MailerService
         return false;
     }
 
-    /** add message to spool if activated or send it */
-    public function spool()
-    {   
-        $this->spoolMailer->send($this->message);
-    }
     
     /** send message */
     public function send()
