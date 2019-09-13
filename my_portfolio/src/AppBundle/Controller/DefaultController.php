@@ -39,11 +39,19 @@ class DefaultController extends BaseController
             // var_dump($form->getData());
             try{
 
-            $mailer = $this->sc->getMailer();
+            $mailer = $this->sc->getMailer(); //Va chercher la méthode dans le ServiceCOntainer
+            $mailer->setBody(
+                $this->sc->getTemplating('twig')->render('Emails/registration.html.twig')
+            );    
+            
+            $mailer->send($message);
 
-            return $this->render('base.html.twig');
+            // dump($mailer);
+            //  die();
+
+            return $this->render('default/index.html.twig');
             }catch(Exception $e){
-                 dump($mailer);
+                 dump($e->getMessage());
                  die();
             }
         }

@@ -30,4 +30,8 @@ class ServiceContainer
     {
         return $this->container->get(\AppBundle\Service\MailerService::class);
     }
+
+    public function getTemplating() {
+        return $this->container->get('templating');
+    }
 }
