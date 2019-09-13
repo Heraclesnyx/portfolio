@@ -44,7 +44,7 @@ class DefaultController extends BaseController
                 $this->sc->getTemplating('twig')->render('Emails/registration.html.twig')
             );    
             
-            // $mailer->send($message);
+            $mailer->send();
 
             // dump($mailer);
             //  die();
