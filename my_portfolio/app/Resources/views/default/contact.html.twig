@@ -7,8 +7,9 @@
    
 
     {% for input in formChildren %}
-        {{ form_widget(input) }}
         {{ form_label(input) }}
+        {{ form_widget(input) }}
+        
 
         <p>{{ form_errors(input) }}</p>
     {% endfor %}
