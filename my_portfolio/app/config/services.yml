@@ -43,5 +43,5 @@ services:
 
      # Mailer
     AppBundle\Service\MailerService:
-        arguments: ['@swiftmailer.mailer.immediat', '%mail_sender_address%']
+        arguments: ['@swiftmailer.mailer.default', '%mail_sender_address%']
         public: true

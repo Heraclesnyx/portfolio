@@ -49,7 +49,7 @@ class DefaultController extends BaseController
             // dump($mailer);
             //  die();
 
-            return $this->render('default/index.html.twig');
+            // return $this->render('default/index.html.twig');
             }catch(Exception $e){
                  dump($e->getMessage());
                  die();
