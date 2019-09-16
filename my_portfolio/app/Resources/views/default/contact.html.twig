@@ -4,8 +4,14 @@
     {% set formChildren = form.children %}
 
     {{ form_start(form, {'action': '/contact'}) }}
+    {{form_label(form.lastName, 'Nom :')}}
+    {{form_label(form.firstName, 'Prénom :')}}
+    {{form_label(form.mail, 'Mail :')}}
+    {{form_label(form.content, 'Votre commentaire :')}}
+
     {% for input in formChildren %}
         {{ form_widget(input) }}
+
         <p>{{ form_errors(input) }}</p>
     {% endfor %}
     <input type="submit">
