@@ -17,7 +17,7 @@ class ContactType extends AbstractType
         $builder
             ->add('lastName', Type\TextType::class,[
                 'attr'=>['class'=>'form-control'],
-                'label' => 'label.contact.lastName',
+                
             ])
             ->add('firstName', Type\TextType::class,[
                 'attr'=>['class'=>'form-control'],
