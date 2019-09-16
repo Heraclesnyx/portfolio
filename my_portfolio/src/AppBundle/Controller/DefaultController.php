@@ -40,8 +40,12 @@ class DefaultController extends BaseController
             try{
 
             $mailer = $this->sc->getMailer(); //Va chercher la méthode dans le ServiceCOntainer
+            $mailer->setTo('jesuis@exemple.fr');
+            $mailer->setSubject('Message venant de votre application');
             $mailer->setBody(
-                $this->sc->getTemplating('twig')->render('Emails/registration.html.twig')
+                $this->sc->getTemplating('twig')->render('Emails/registration.html.twig', [
+                        'data' => $contact
+                    ])
             );    
             
             $mailer->send();
@@ -49,7 +53,7 @@ class DefaultController extends BaseController
             // dump($mailer);
             //  die();
 
-            // return $this->render('default/index.html.twig');
+            return $this->redirectToRoute('homepage');
             }catch(Exception $e){
                  dump($e->getMessage());
                  die();
