@@ -13,6 +13,7 @@ class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        //Création du formulaire
         $builder
             ->add('lastName', Type\TextType::class)
             ->add('firstName', Type\TextType::class)
@@ -27,11 +28,3 @@ class ContactType extends AbstractType
        ]);
     }
 }
-            
-
-            // $form->getData();
-
-    //         return $this->render('/base.html.twig', [
-    //         'form' => $form->createView(),
-    //     ]);
-    // }

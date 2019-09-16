@@ -36,11 +36,10 @@ class DefaultController extends BaseController
 
         if ($form->isSubmitted() && $form->isValid()) {
             # try-catch pour l'envoi du mail.
-            // var_dump($form->getData());
             try{
 
             $mailer = $this->sc->getMailer(); //Va chercher la méthode dans le ServiceCOntainer
-            $mailer->setTo('jesuis@exemple.fr');
+            $mailer->setTo('anthony12041989@gmailcom');
             $mailer->setSubject('Message venant de votre application');
             $mailer->setBody(
                 $this->sc->getTemplating('twig')->render('Emails/registration.html.twig', [
@@ -49,9 +48,6 @@ class DefaultController extends BaseController
             );    
             
             $mailer->send();
-
-            // dump($mailer);
-            //  die();
 
             return $this->redirectToRoute('homepage');
             }catch(Exception $e){
