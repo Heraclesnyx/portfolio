@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type;
+// use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 class ContactType extends AbstractType
 {
@@ -28,6 +29,9 @@ class ContactType extends AbstractType
             ->add('content', Type\TextType::class,[
                 'attr'=>array('placeholder' => 'Ajouter votre commentaire','class'=>'form-control'),
             ]);
+            // ->add('token', HiddenType::class, [
+            //     'data' => false,
+            // ]);
 
     }
 
