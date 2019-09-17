@@ -2,12 +2,12 @@
 
 {% block body %}
     {% set formChildren = form.children %}
-
+    
     {{ form_start(form, {'action': '/contact'}) }}
    
 
     {% for input in formChildren %}
-        {{ form_label(input) }}
+       	{{ form_label(input) }}
         {{ form_widget(input) }}
         
 
@@ -16,7 +16,7 @@
     <input type="submit">
     {{ form_end(form) }}
 
-
+    
 {% endblock %}
 
  

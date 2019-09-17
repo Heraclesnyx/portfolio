@@ -16,18 +16,19 @@ class ContactType extends AbstractType
         //Création du formulaire
         $builder
             ->add('lastName', Type\TextType::class,[
-                'attr'=>['class'=>'form-control'],
+                'attr'=>array('placeholder' => 'Nom','class'=>'form-control'),
                 
             ])
             ->add('firstName', Type\TextType::class,[
-                'attr'=>['class'=>'form-control'],
+                'attr'=>array('placeholder' => 'Prénom','class'=>'form-control'),
             ])
             ->add('mail', Type\EmailType::class,[
-                'attr'=>['class'=>'form-control'],
+                'attr'=>array('placeholder' => 'Email','class'=>'form-control'),
             ])
             ->add('content', Type\TextType::class,[
-                'attr'=>['class'=>'form-control'],
+                'attr'=>array('placeholder' => 'Ajouter votre commentaire','class'=>'form-control'),
             ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
