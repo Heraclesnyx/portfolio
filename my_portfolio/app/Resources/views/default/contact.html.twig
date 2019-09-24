@@ -9,6 +9,7 @@
     {% for input in formChildren if input.vars.name not in ['_token'] %}
        	{{ form_label(input) }}
         {{ form_widget(input) }}
+        {{ form_errors(input) }}
         
 
         <p>{{ form_errors(input) }}</p>
