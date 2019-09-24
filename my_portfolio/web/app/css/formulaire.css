@@ -1,8 +1,7 @@
-/*form {
+#formulaire {
 	border: 1px solid green;
-	background-color: pink;
 
-*/}
+}
 
 form {
 	border-radius: 10px;
@@ -12,14 +11,11 @@ form {
 	/*background-color: #000000;*/
 }
 
-body {
-  background-color: pink;
-}
-
 /*label {
 	border: 1px solid cyan;
 	float: left;
 }*/
+
 @media screen and (max-width: 320px) {
 	form {
 		background-color: yellow;
