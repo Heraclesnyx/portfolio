@@ -1,14 +1,10 @@
-#formulaire {
-	border: 1px solid green;
-
-}
-
 form {
 	border-radius: 10px;
 	border: 1px solid grey;
 	margin: auto;
     width: 50%;
-	/*background-color: #000000;*/
+    margin-top: 50px;
+	background-color: blue;
 }
 
 /*label {
@@ -16,26 +12,18 @@ form {
 	float: left;
 }*/
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 992px) {
 	form {
-		background-color: yellow;
+		background-color: olive;
 	}
 }
 
-@media screen and (min-width: 320px) and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
-form {
-	
-	background-color: olive;
+	form {
+		
+		background-color: yellow;
 
-}
+	}
 
-}
-
-@media screen and (min-width: 600px) and (max-width: 1024px) {
-
-form {
-	background-color: blue;
-
-}
 }
