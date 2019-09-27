@@ -1,50 +1,28 @@
 <div class="single-item">
-  <div class="projets">
-	<div class="projet">
+	<button type="button" class="slick-prev slick-arrow">Previous</button>
+	<div>
 		<a href=" https://cat-match.herokuapp.com" target="_blank">
 			<img src="app/img/cat.png" alt="photo de chats" />
 		</a>
-		<div class="desc">Projet réaliser en NodeJs</div>
 	</div>
-  <div class="projet">
+	<button type="button" class="slick-next slick-arrow">Next</button>
+	<div>
 		<a href=" https://github.com/Heraclesnyx/book/tree/master/book_store" target="_blank">
 			<img src="app/img/book.png" alt="photo de chats" />
 		</a>
-		<div class="desc">Projet réaliser en Symfony (version 3.4)</div>
 	</div>
-  <div class="projet">
+
+	<div>
 		<a href=" https://cat-match.herokuapp.com" target="_blank">
 			<img src="app/img/cat.png" alt="photo de chats" />
 		</a>
-		<div class="desc">Projet réaliser en NodeJs</div>
 	</div>
 </div>
 
 
 
-
-
-
-
-<!-- <div class="projets">
-	<div class="projet">
-		<a href=" https://cat-match.herokuapp.com" target="_blank">
-			<img src="app/img/cat.png" alt="photo de chats" />
-		</a>
-		<div class="desc">Projet réaliser en NodeJs</div>
-	</div>
-
-	<div class="projet">
-		<a href=" https://github.com/Heraclesnyx/book/tree/master/book_store" target="_blank">
-			<img src="app/img/book.png" alt="photo de chats" />
-		</a>
-		<div class="desc">Projet réaliser en Symfony (version 3.4)</div>
-	</div>
-
-	<div class="projet">
-		<a href=" https://cat-match.herokuapp.com" target="_blank">
-			<img src="app/img/cat.png" alt="photo de chats" />
-		</a>
-		<div class="desc">Projet réaliser en NodeJs</div>
-	</div>
-</div> -->
+<script>
+	$(document).ready(function(){
+		$('.single-item').slick();
+	});
+</script>

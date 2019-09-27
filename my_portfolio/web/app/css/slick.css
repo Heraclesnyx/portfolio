@@ -89,6 +89,7 @@
 .slick-slide img
 {
     display: block;
+    box-shadow: 150px 100px 15px grey;
 }
 .slick-slide.slick-loading img
 {
@@ -116,4 +117,10 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+.single-item img {
+    width: 50%;
+    height: auto;
+    margin: auto;
 }
