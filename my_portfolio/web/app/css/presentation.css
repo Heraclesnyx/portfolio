@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    background-color: #F2F2F2;
+    background-color: #0E2759;
 }
 ol, ul {
     list-style: none;
@@ -45,8 +45,16 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+h1, h2{
+    color: #8F9FBF;
+}
+
+#main{
+    background-color: #F2F2F2;
+}
+
 .presentation {
-	border: 1px solid red;
 	height: 270px;
 	overflow: hidden;
 	float: right;
@@ -71,4 +79,12 @@ h2 {
 
 .presentation p {
 	margin: 50px 0 0 220px;
+}
+
+p{
+    color: #A3BAD9;
+}
+
+button {
+    color: #FFF9FF;
 }
