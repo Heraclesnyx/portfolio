@@ -122,5 +122,9 @@
 .single-item img {
     width: 50%;
     height: auto;
-    margin: auto;
+    margin: 10px 345px;
+}
+
+.single-item {
+    left: 50px;
 }
