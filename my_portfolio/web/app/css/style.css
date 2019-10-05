@@ -75,7 +75,7 @@ p{
     position: fixed;
     bottom: 0;
     right: 0;
-    background-color: black; /*A modifer*/
+    background-color: #F2F2F2; /*A modifer*/
     border-radius: 10%;
 
 }
@@ -88,11 +88,12 @@ button {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    padding: 0;
-
+    margin: 0px 9px;
+    background-color: black;
     /*float: right;*/
 }
 
 .fa {
     font-size: xx-large;
+    color: #F2F2F2;
 }
