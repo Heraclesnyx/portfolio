@@ -47,22 +47,26 @@ table {
     border-spacing: 0;
 }
 
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 h1, h2{
     color: #8F9FBF;
-}
-
-/*#main{
-    background-color: #F2F2F2;
-}*/
-
-h1 {
     text-align: center;
 }
+
+
+/*h1 {
+    text-align: center;
+}*/
 
 h2 {
     width: 50%;
     margin: 15px 0 0 370px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 p{

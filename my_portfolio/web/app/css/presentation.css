@@ -1,12 +1,11 @@
 .presentation {
-	height: 270px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	float: right;
 	margin-top: 75px;
 }
 
 .presentation img {
-	margin: -22px 15px;
+	margin: -38px 15px;
 	float: left;
 	max-height: 100%;
 	width: 150px;
@@ -21,5 +20,6 @@
 	margin: 65px 0 0 220px;
     font-size: 18px;
     text-align: justify;
+    /*box-sizing: inherit;*/
 }
 
