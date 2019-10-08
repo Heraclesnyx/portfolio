@@ -1,73 +1,25 @@
-RESET CSS IMPORTANTTTTTTTTTTTTTT !!!!
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 .presentation {
-	border: 1px solid red;
-	height: 270px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	float: right;
-}
-
-h1 {
-	text-align: center;
-}
-
-h2 {
-	width: 50%;
-	margin: 0 auto;
-	text-align: center;
+	margin-top: 75px;
 }
 
 .presentation img {
-	margin: 0 auto;
+	margin: -38px 15px;
 	float: left;
 	max-height: 100%;
-	width: auto;
+	width: 150px;
+	box-shadow: 10px 10px #8F9FBF;
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px solid black;
+	background-color: #F2F2F2;
 }
 
 .presentation p {
-	margin: 50px 0 0 220px;
+	margin: 65px 0 0 220px;
+    font-size: 18px;
+    text-align: justify;
+    /*box-sizing: inherit;*/
 }
+

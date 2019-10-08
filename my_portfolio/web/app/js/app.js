@@ -6,7 +6,7 @@ app.config(['$httpProvider', function($httpProvider) {
 
 app.config(function($routeProvider) {
 	$routeProvider.when('/', {
-		templateUrl: 'app/js/templates/presentation.html',
+		templateUrl: 'app/js/templates/projets.html',
 		controller: 'mainController'
 	});
 });
