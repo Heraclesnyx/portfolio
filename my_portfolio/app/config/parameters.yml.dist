@@ -12,8 +12,10 @@ parameters:
 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
-    mailer_user: ~
-    mailer_password: ~
+    mailer_user: 0e1f28fd279827
+    mailer_password: 6cf895620b4a9
+    mailer_port: 465
+    mail_sender_address: anthony12041989@gmail.com
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
