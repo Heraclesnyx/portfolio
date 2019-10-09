@@ -1,8 +1,9 @@
 .presentation {
 	/*overflow: hidden;*/
 	float: right;
-	margin-top: 75px;
-	margin-left: 50px;
+	margin: auto;
+	margin-top: 65px;
+	/*margin-left: 50px;*/
 }
 
 .presentation img {

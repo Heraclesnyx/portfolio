@@ -58,17 +58,9 @@ h1, h2{
     text-align: center;
 }
 
-
-/*h1 {
-    text-align: center;
-}*/
-
-/*h2 {
-    width: 50%;
-    margin: 15px 0 0 370px;
-    /*text-align: center;
-}*/
-
+.container{
+    margin: auto;
+}
 p{
     color: #A3BAD9;
 }
