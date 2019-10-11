@@ -16,8 +16,6 @@
     -ms-touch-action: pan-y;
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
-    width: 500px;
-    max-width: 90%;
 }
 
 .slick-list
@@ -83,7 +81,6 @@
 
     height: 100%;
     min-height: 1px;
-    /*max-width: 1200px;*/
 }
 [dir='rtl'] .slick-slide
 {
@@ -121,7 +118,7 @@
     display: none;
 }
 
-.single-item img {
+./*single-item img {
     width: 50%;
     max-height: 270px;
     margin: 10px 350px;
@@ -129,4 +126,4 @@
 
 .single-item {
     left: 50px;
-}
+}*/
