@@ -19,9 +19,17 @@
 }
 
 .presentation p {
-	margin: 65px 0 0 220px;
+	/*margin-left: 220px;*/
     font-size: 18px;
     text-align: justify;
     /*box-sizing: inherit;*/
 }
 
+
+@media only and screen and (max-width: 48em) {
+
+    .presentation p{
+        border: 1px solid red;
+        margin: 0;
+    }
+}

@@ -59,6 +59,7 @@ button {
     border-radius: 20%;
     margin: 0px 6px;
     background-color: black;
+    z-index: 1;
     /*float: right;*/
 }
 
@@ -99,8 +100,4 @@ button {
     text-transform: uppercase;
     border: 1px solid #fff;
 }
-
-/*#auteur .hidden-xs {
-    overflow: hidden;
-}*/
 
